@@ -1,0 +1,129 @@
+****** In level  0  *********
+--- entering first call: R= 1 , W= 0
+
+****** In level  1  *********
+--- entering first call: R= 2 , W= 0
+
+****** In level  2  *********
+--- entering first call: R= 3 , W= 0
+
+****** In level  3  *********
+[]
+****** Leaving level  3  ********* 
+
+****** Back to level  2  ********* 
+
+--- after first call: R= 2 , W= 0
+--- after outchg:  ['c', '', '']
+--- entering second call: R= 3 , W= 1
+
+****** In level  3  *********
+['c']
+****** Leaving level  3  ********* 
+
+****** Back to level  2  ********* 
+
+--- after second call: R= 2 , W= 0
+****** Leaving level  2  ********* 
+
+****** Back to level  1  ********* 
+
+--- after first call: R= 1 , W= 0
+--- after outchg:  ['b', '', '']
+--- entering second call: R= 2 , W= 1
+
+****** In level  2  *********
+--- entering first call: R= 3 , W= 1
+
+****** In level  3  *********
+['b']
+****** Leaving level  3  ********* 
+
+****** Back to level  2  ********* 
+
+--- after first call: R= 2 , W= 1
+--- after outchg:  ['b', 'c', '']
+--- entering second call: R= 3 , W= 2
+
+****** In level  3  *********
+['b', 'c']
+****** Leaving level  3  ********* 
+
+****** Back to level  2  ********* 
+
+--- after second call: R= 2 , W= 1
+****** Leaving level  2  ********* 
+
+****** Back to level  1  ********* 
+
+--- after second call: R= 1 , W= 0
+****** Leaving level  1  ********* 
+
+****** Back to level  0  ********* 
+
+--- after first call: R= 0 , W= 0
+--- after outchg:  ['a', 'c', '']
+--- entering second call: R= 1 , W= 1
+
+****** In level  1  *********
+--- entering first call: R= 2 , W= 1
+
+****** In level  2  *********
+--- entering first call: R= 3 , W= 1
+
+****** In level  3  *********
+['a']
+****** Leaving level  3  ********* 
+
+****** Back to level  2  ********* 
+
+--- after first call: R= 2 , W= 1
+--- after outchg:  ['a', 'c', '']
+--- entering second call: R= 3 , W= 2
+
+****** In level  3  *********
+['a', 'c']
+****** Leaving level  3  ********* 
+
+****** Back to level  2  ********* 
+
+--- after second call: R= 2 , W= 1
+****** Leaving level  2  ********* 
+
+****** Back to level  1  ********* 
+
+--- after first call: R= 1 , W= 1
+--- after outchg:  ['a', 'b', '']
+--- entering second call: R= 2 , W= 2
+
+****** In level  2  *********
+--- entering first call: R= 3 , W= 2
+
+****** In level  3  *********
+['a', 'b']
+****** Leaving level  3  ********* 
+
+****** Back to level  2  ********* 
+
+--- after first call: R= 2 , W= 2
+--- after outchg:  ['a', 'b', 'c']
+--- entering second call: R= 3 , W= 3
+
+****** In level  3  *********
+['a', 'b', 'c']
+****** Leaving level  3  ********* 
+
+****** Back to level  2  ********* 
+
+--- after second call: R= 2 , W= 2
+****** Leaving level  2  ********* 
+
+****** Back to level  1  ********* 
+
+--- after second call: R= 1 , W= 1
+****** Leaving level  1  ********* 
+
+****** Back to level  0  ********* 
+
+--- after second call: R= 0 , W= 0
+****** Leaving level  0  ********* 
