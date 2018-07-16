@@ -42,21 +42,21 @@ public class NQueen {
 		// Check left side.
 		for(int i = 0; i < col ; i++) {
 			if(matrix[row][i] == 1) {
-				System.out.println("Already a queen is on left side");
+				//System.out.println("Already a queen is on left side");
 				return false;
 			}
 		}
 		
 		for(int i = row, j = col; i>=0 && j >=0; i--,j-- ) {
 			if(matrix[i][j] == 1) {
-				System.out.println("Already a queen is on left-top side");
+				//System.out.println("Already a queen is on left-top side");
 				return false;
 			}
 		}
 
 		for(int i = row, j = col; i < matrix.length && j >=0; i++,j-- ) {
 			if(matrix[i][j] == 1) {
-				System.out.println("Already a queen is on left-down side");
+				//System.out.println("Already a queen is on left-down side");
 				return false;
 			}
 		}
@@ -67,18 +67,18 @@ public class NQueen {
 	
 	
 	public static boolean check(int [][] matrix, int col) {
-		System.out.format("\ncol = %d\n", col);
-		printMatrix(matrix);
+		//System.out.format("\ncol = %d\n", col);
+		//printMatrix(matrix);
 
 		if(col >= matrix.length) {
-			System.out.println("++++++++++++++++++++++++");
+			//System.out.println("++++++++++++++++++++++++");
 			printMatrix(matrix);
-			System.out.println("++++++++++++++++++++++++");
+			//System.out.println("++++++++++++++++++++++++");
 			return true;
 		}
 		boolean isSolution = false;
 		for(int r = 0; r < matrix.length; r++) {
-			System.out.format("row = %d\n", r);
+			//System.out.format("row = %d\n", r);
 			if(isSafe(matrix, r, col)) {
 				matrix[r][col] = 1;
 				isSolution = check(matrix, col + 1) || isSolution;
