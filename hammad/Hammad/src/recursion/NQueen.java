@@ -3,7 +3,7 @@ package recursion;
 public class NQueen {
 	public static void main(String[] args) {
 		
-		for(int i = 4; i <= 4; i++) {
+		for(int i = 0; i <= 4; i++) {
 			int [][] matrix = new int [i][i];
 			
 			if(check(matrix, 0)) {
