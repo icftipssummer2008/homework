@@ -1,6 +1,6 @@
 public class CloneBT{
 	public Node cloneBT(Node root){
-		Node newRoot = new Node();
+		Node newRoot;
 		cloneHelp(root, newRoot);
 		return newRoot;
 	}

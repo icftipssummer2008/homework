@@ -13,7 +13,7 @@ public class TreeToList {
 			}
 			l.get(i).right = l.get(i + 1);
 		}
-		return root;
+		return l.get(0);
 	}
 
 	public void getInOrder(Node root, List<Node> l){
