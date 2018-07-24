@@ -19,7 +19,32 @@ public class Graph {
     }
 
     public void printGraphUsingBFS() {
-
+        HashSet<Integer> seen = new HashSet<>();
+    	System.out.print("BFS Search: ");
+    	for (int key : this.adjacencyList.keySet()) {
+    	    this.BFSHelper(key, seen);
+    	}
+    	System.out.println();
+    }
+    
+    private void BFSHelper(int key, Set<Integer> seen) {
+    	Queue<Integer> q = new LinkedList<>();
+    	q.add(key);
+    	while(!q.isEmpty()) {
+    		if(this.adjacencyList.get(key) != null) {
+        		List<Integer> list = this.adjacencyList.get(key);
+        		for(int i = 0; i < list.size(); i++) {
+        			if(!seen.contains(list.get(i))) {
+        				q.add(list.get(i));
+        			}
+        		}
+        	}
+    		int num = q.poll();
+    		if(!seen.contains(num)) {
+        		System.out.print(num + " ");
+            	seen.add(num);
+    		}
+    	}
     }
 
     public void printGraphUsingDFS() {
@@ -28,9 +53,10 @@ public class Graph {
     	for (int key : this.adjacencyList.keySet()) {
     	    this.DFSHelper(key, seen);
     	}
+    	System.out.println();
     }
     
-    public void DFSHelper(int key, Set<Integer> seen) {
+    private void DFSHelper(int key, Set<Integer> seen) {
     	if(!seen.contains(key)) {
     		System.out.print(key + " ");
     		seen.add(key);
@@ -57,5 +83,6 @@ public class Graph {
         g.addEdge(3, 6);
         
         g.printGraphUsingDFS();
+        g.printGraphUsingBFS();
     }
 }
