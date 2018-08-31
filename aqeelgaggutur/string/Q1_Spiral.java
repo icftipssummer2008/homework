@@ -1,4 +1,4 @@
-class Solution {
+class SpiralOrder {
     public List<Integer> spiralOrder(int[][] matrix) {
         List<Integer> res = new ArrayList<>();
         if(matrix.length == 0) return res;
