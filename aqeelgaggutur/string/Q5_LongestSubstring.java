@@ -1,18 +1,47 @@
-public class Neuronym {
-    public static void printAllNeuronyms(String s){
-        if(s.length() < 5) return;
-        for(int i = 1; i < s.length() - 2; i++){
-            for(int j = i + 1; j < s.length() - 1; j++) {
-                printIt(s, i, j);
+class LengthOfLongestSubstringTwoDistinct {
+    public int lengthOfLongestSubstringTwoDistinct(String s) {
+        if(s.length() <= 2) return s.length();
+        int maxLength = 0;
+        int chars = 0;
+        HashMap<Character, Integer> map = new HashMap<>();
+        int read = 0;
+        int write = 0;
+        int currentLength = 0;
+        while(read < s.length()){
+            char currChar = s.charAt(read);
+            if(chars == 0 || chars == 1){
+                if(map.containsKey(currChar)){
+                    map.put(currChar, map.get(currChar) + 1);
+                } else {
+                    map.put(currChar, 1);
+                    chars++;
+                }
+                currentLength++;
+                read++;
+            } else {
+                if(map.containsKey(currChar)) {
+                    map.put(currChar, map.get(currChar) + 1);
+                    currentLength++;
+                    read++;
+                } else {
+                    if(currentLength > maxLength) maxLength = currentLength;
+                    boolean breakit = false;
+                    while(!breakit && write < s.length()) {
+                        char writeChar = s.charAt(write);
+                        if(map.get(writeChar) == 1) {
+                            map.remove(writeChar);
+                            chars--;
+                            currentLength--;
+                            breakit = true;
+                        } else {
+                            map.put(writeChar, map.get(writeChar)- 1);
+                            currentLength--;
+                        }
+                        write++;
+                    }
+                }
             }
         }
-    }
-
-    public static void printIt(String s, int start, int end){
-        StringBuilder sb = new StringBuilder();
-        sb.append(s.substring(0, start));
-        sb.append(end - start + 1);
-        sb.append(s.substring(end + 1, s.length()));
-        System.out.println(sb.toString());
+        return currentLength > maxLength ? currentLength : maxLength;
     }
 }
