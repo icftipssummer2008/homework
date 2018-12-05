@@ -60,7 +60,6 @@ public class RemoveDuplicates {
 			return str;
 		}
 		
-		
 		char[] charArray = str.toCharArray();
 		
 		Arrays.sort(charArray);
