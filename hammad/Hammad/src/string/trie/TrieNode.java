@@ -6,9 +6,11 @@ public class TrieNode {
 
 	private TrieNode[] links;
 	private boolean end;
+	private Character c;
 	
-	public TrieNode() {
+	public TrieNode(Character c) {
 		links = new TrieNode[MAX_CHARS];
+		this.c = c;
 	}
 	
 	public boolean containsKey(char c) {
@@ -27,8 +29,16 @@ public class TrieNode {
 		return end;
 	}
 
-	public void setEnd(boolean end) {
-		this.end = end;
+	public void setEnd() {
+		this.end = true;
+	}
+
+	public char getC() {
+		return c;
+	}
+
+	public TrieNode[] getLinks() {
+		return links;
 	}
 	
 }
