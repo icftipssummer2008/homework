@@ -68,6 +68,7 @@ public class RemoveDuplicates {
 		
 		int length = charArray.length;
 		while(loopIndx < length) {
+			System.out.format("\n loopIndx: %d, strIndx: %d, str: %s", loopIndx, strIndx, new String(charArray));
 			if(charArray[loopIndx] != charArray[loopIndx - 1]) {
 				charArray[strIndx] = charArray[loopIndx];
 				strIndx++;
@@ -77,7 +78,11 @@ public class RemoveDuplicates {
 		
 		String result = new String(charArray, 0, strIndx);
 		
+		System.out.println();
 		return result;
 		
 	}
+	
+	
+	
 }
